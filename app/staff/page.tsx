@@ -41,7 +41,7 @@ const staffMembers = [
   {
     name: "Tiebe",
     role: "Admin",
-    description: "Keepy the Community active and helps the players",
+    description: "Keeps the Community active and helps the players",
     avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-purple-400",
