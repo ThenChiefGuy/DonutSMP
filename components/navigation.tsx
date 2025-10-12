@@ -88,7 +88,7 @@ export function Navigation() {
           <div className="flex items-center space-x-4">
             {/* Discord Button - Desktop */}
             <a
-              href="https://discord.gg/craftrealm"
+              href="https://discord.gg/GJkNsYtEjE"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center space-x-2 discord-btn neon-glow-blue"
@@ -190,7 +190,7 @@ export function Navigation() {
               </Link>
             ))}
             <a
-              href="https://discord.gg/craftrealm"
+              href="https://discord.gg/GJkNsYtEjE"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 px-3 py-2 text-base font-medium transition-colors"
