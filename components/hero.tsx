@@ -132,7 +132,7 @@ export function Hero() {
           >
             <div className="flex items-center justify-center space-x-2 mb-2">
               <div className="text-3xl font-bold text-green-400">
-                {loading ? "..." : status?.players?.online?.toLocaleString() || "1,247"}
+                {loading ? "..." : status?.players?.online?.toLocaleString() || "19"}
               </div>
               {!loading && !error && status?.online && (
                 <div className="flex items-center space-x-1">
