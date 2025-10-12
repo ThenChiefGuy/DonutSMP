@@ -36,7 +36,7 @@ export function Navigation() {
                 style={{ borderRadius: "0.75rem" }}
               >
                 <Image
-                  src="https://sjc.microlink.io/Urp0tNZenE8Ucn9pxVrQWrW5X33QYgvG_DdUbukIjI12XUEK7EXrr0tu5eeNDQNqqzGOYUIAn9YtZnkscMg2bQ.jpeg"
+                  src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://donutsmp.net/&size=128"
                   alt="CraftRealm Creeper Logo"
                   width={40}
                   height={40}
