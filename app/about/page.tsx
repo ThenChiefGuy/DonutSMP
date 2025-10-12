@@ -8,10 +8,10 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 neon-text-green">
-            About <span className="text-green-400">CraftRealm</span>
+            About <span className="text-green-400">DonutSMP</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            CraftRealm was born from a passion for creating the ultimate Minecraft survival experience. Since 2021,
+            DonutSMP was born from a passion for creating the ultimate Minecraft survival experience. Since 2025,
             we've been dedicated to building a community where creativity, adventure, and friendship thrive.
           </p>
         </div>
@@ -22,8 +22,8 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-6 neon-text-green">Our Story</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                CraftRealm began as a small project between friends who shared a love for Minecraft. What started as a
-                simple survival server has evolved into a thriving community of over 15,000 players.
+                DonutSMP began as a small project between friends who shared a love for Minecraft. What started as a
+                simple survival server has evolved into a thriving community of over 200 players.
               </p>
               <p>
                 Our journey has been marked by continuous innovation, from developing custom plugins to hosting epic
@@ -31,7 +31,7 @@ export default function AboutPage() {
                 of all skill levels.
               </p>
               <p>
-                Today, CraftRealm stands as one of the premier Minecraft survival servers, known for our active
+                Today, DonutSMP stands as one of the premier Minecraft survival servers, known for our active
                 community, professional staff, and commitment to providing the best possible gaming experience.
               </p>
             </div>
@@ -79,8 +79,8 @@ export default function AboutPage() {
                 <Calendar className="w-6 h-6 text-green-400" />
               </div>
               <div className="glass-effect p-6 flex-1">
-                <h3 className="text-xl font-bold text-white mb-2">2021 - The Beginning</h3>
-                <p className="text-gray-300">CraftRealm launches with 20 players and big dreams.</p>
+                <h3 className="text-xl font-bold text-white mb-2">2025  - The Beginning</h3>
+                <p className="text-gray-300">DonutSMP launches with 20 players and big dreams.</p>
               </div>
             </div>
 
@@ -89,8 +89,8 @@ export default function AboutPage() {
                 <Users className="w-6 h-6 text-blue-400" />
               </div>
               <div className="glass-effect p-6 flex-1">
-                <h3 className="text-xl font-bold text-white mb-2">2022 - Growing Community</h3>
-                <p className="text-gray-300">Reached 1,000 registered players and introduced custom plugins.</p>
+                <h3 className="text-xl font-bold text-white mb-2">2025 - Growing Community</h3>
+                <p className="text-gray-300">Reached 2000 registered players and introduced custom plugins.</p>
               </div>
             </div>
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 <Server className="w-6 h-6 text-purple-400" />
               </div>
               <div className="glass-effect p-6 flex-1">
-                <h3 className="text-xl font-bold text-white mb-2">2023 - Major Expansion</h3>
+                <h3 className="text-xl font-bold text-white mb-2">2025 - Major Expansion</h3>
                 <p className="text-gray-300">Server hardware upgrade and launch of multiple game modes.</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 <Heart className="w-6 h-6 text-red-400" />
               </div>
               <div className="glass-effect p-6 flex-1">
-                <h3 className="text-xl font-bold text-white mb-2">2024 - Community First</h3>
+                <h3 className="text-xl font-bold text-white mb-2">2025  - Community First</h3>
                 <p className="text-gray-300">15,000+ players strong with focus on community events and feedback.</p>
               </div>
             </div>
