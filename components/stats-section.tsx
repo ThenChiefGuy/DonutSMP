@@ -9,7 +9,7 @@ export function StatsSection() {
   const stats = [
     {
       icon: Users,
-      value: loading ? "..." : status?.players?.online ? `${status.players.online.toLocaleString()}` : "15,000+",
+      value: loading ? "..." : status?.players?.online ? `${status.players.online.toLocaleString()}` : "1000+",
       label: "Players Online",
       color: "text-blue-400",
       pulseClass: "pulse-glow-subtle",
@@ -25,7 +25,7 @@ export function StatsSection() {
     },
     {
       icon: Trophy,
-      value: "500+",
+      value: "20+",
       label: "Events Hosted",
       color: "text-yellow-400",
       pulseClass: "pulse-glow-yellow",
@@ -33,7 +33,7 @@ export function StatsSection() {
     },
     {
       icon: Clock,
-      value: "3 Years",
+      value: "1 Year",
       label: "Online Since",
       color: "text-purple-400",
       pulseClass: "pulse-glow-purple",
