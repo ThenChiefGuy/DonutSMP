@@ -4,7 +4,7 @@ import { Users, Server, Trophy, Clock } from "lucide-react"
 import { useServerStatus } from "../hooks/use-server-status"
 
 export function StatsSection() {
-  const { status, loading, error } = useServerStatus("hypixel.net")
+  const { status, loading, error } = useServerStatus("ggdonutsmp.falixsrv.me")
 
   const stats = [
     {
