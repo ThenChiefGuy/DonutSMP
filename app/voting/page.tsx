@@ -1,223 +1,251 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ExternalLink, Gift, Star, Trophy } from "lucide-react"
-import Image from "next/image"
+import { useEffect } from "react";
 
-const votingSites = [
-  {
-    name: "MinecraftServers.org",
-    url: "https://minecraftservers.org/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "5 Diamonds + 100 Coins",
-    cooldown: "24 hours",
-  },
-  {
-    name: "Minecraft-Server-List.com",
-    url: "https://minecraft-server-list.com/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "Vote Key + XP Boost",
-    cooldown: "24 hours",
-  },
-  {
-    name: "TopMinecraftServers.org",
-    url: "https://topminecraftservers.org/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "Rare Items + Money",
-    cooldown: "24 hours",
-  },
-  {
-    name: "MinecraftMP.com",
-    url: "https://minecraftmp.com/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "Vote Crate + Tokens",
-    cooldown: "12 hours",
-  },
-  {
-    name: "Minecraft-Servers.biz",
-    url: "https://minecraft-servers.biz/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "Premium Items",
-    cooldown: "24 hours",
-  },
-  {
-    name: "TopG.org",
-    url: "https://topg.org/vote/123456",
-    logo: "https://minecraft.buzz/template/images/logo.png?v=6",
-    reward: "Special Rewards",
-    cooldown: "24 hours",
-  },
-]
+export default function StorePage() {
+  useEffect(() => {
+    const bar = document.getElementById("bar") as HTMLDivElement | null;
+    let pct = 0;
+    const steps = [8, 16, 5, 20, 10, 9, 12, 20];
+    let i = 0;
 
-const topVoters = [
-  { rank: 1, name: "DiamondMiner99", votes: 847 },
-  { rank: 2, name: "CraftMaster", votes: 823 },
-  { rank: 3, name: "BlockBuilder", votes: 756 },
-  { rank: 4, name: "RedstoneWiz", votes: 689 },
-  { rank: 5, name: "EnderDragon", votes: 634 },
-]
-
-export default function VotingPage() {
-  const [copied, setCopied] = useState(false)
-
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error("Failed to copy: ", err)
+    function advance() {
+      if (i >= steps.length) {
+        pct = 100;
+        if (bar) bar.style.width = pct + "%";
+        return;
+      }
+      pct = Math.min(99, pct + steps[i]);
+      if (bar) bar.style.width = pct + "%";
+      i++;
+      setTimeout(advance, 500 + Math.random() * 900);
     }
-  }
+
+    setTimeout(advance, 700);
+
+    const typed = document.getElementById("typed") as HTMLSpanElement | null;
+    const messages = [
+      "checking packets...",
+      "patching core modules...",
+      "optimizing assets...",
+      "finalizing...",
+    ];
+    let tIndex = 0;
+
+    function cycleTyped() {
+      if (typed) typed.textContent = messages[tIndex];
+      tIndex = (tIndex + 1) % messages.length;
+      setTimeout(cycleTyped, 2500 + Math.random() * 1200);
+    }
+
+    cycleTyped();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 neon-text-green">
-            Vote for <span className="text-green-400">CraftRealm</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Support our server by voting on these sites and earn amazing rewards! Your votes help us grow and provide
-            better experiences.
-          </p>
+    <div className="lux-bg min-h-screen text-slate-300 antialiased">
+      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center p-6 lg:p-12 gap-10">
+        {/* Header */}
+        <header className="max-w-xl">
+          <div className="p-6 rounded-2xl terminal glass-accent">
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+              DonutSMP Store — Coming Soon
+            </h1>
+            <p className="mt-3 text-sm text-slate-300/80">
+              A new digital experience is being crafted. Stay tuned — we’re
+              building something truly special.
+            </p>
 
-          <div className="glass-effect p-6 max-w-md mx-auto">
-            <div className="flex items-center justify-center space-x-2 mb-2">
-              <Gift className="w-6 h-6 text-green-400" />
-              <span className="text-lg font-bold text-white mb-2 group-hover:text-green-400 group-hover:neon-text-green transition-all">
-                Daily Vote Rewards
-              </span>
-            </div>
-            <p className="text-green-400 font-semibold">Vote on all sites for bonus rewards!</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {votingSites.map((site, index) => (
-            <div
-              key={index}
-              className="glass-effect p-6 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 group"
-            >
-              <div className="text-center mb-4">
-                <div className="w-full h-20 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                  <Image
-                    src={site.logo || "/placeholder.svg"}
-                    alt={site.name}
-                    width={200}
-                    height={80}
-                    className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity rounded"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-green-400 group-hover:neon-text-green transition-all">
-                  {site.name}
-                </h3>
-              </div>
-
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-400">Reward:</span>
-                  <span className="text-green-400 font-semibold">{site.reward}</span>
-                </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-400">Cooldown:</span>
-                  <span className="text-blue-400">{site.cooldown}</span>
-                </div>
-              </div>
-
+            <div className="mt-6 grid grid-cols-2 gap-3">
               <a
-                href={site.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full minecraft-btn flex items-center justify-center space-x-2 neon-glow-green"
+                href="https://ggdonutsmp.netlify.app"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-red-600/80 to-green-500/80 shadow-md hover:scale-[1.01] transition"
               >
-                <span>Vote Now</span>
-                <ExternalLink className="w-4 h-4" />
+                Dashboard
+              </a>
+              <a
+                href="https://discord.gg/HyTFhjMwCz"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-cyan-600/80 to-green-500/80 shadow-md hover:scale-[1.01] transition"
+              >
+                Discord
               </a>
             </div>
-          ))}
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Top Voters */}
-          <div className="glass-effect p-8">
-            <div className="flex items-center space-x-2 mb-6">
-              <Trophy className="w-6 h-6 text-yellow-400" />
-              <h2 className="text-2xl font-bold text-white">Top Voters This Month</h2>
+            <p className="mt-5 text-xs text-slate-400">
+              Crafted by{" "}
+              <a
+                href="https://github.com/septydev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline"
+              >
+                TheBlackSpider
+              </a>
+            </p>
+          </div>
+        </header>
+
+        {/* Terminal */}
+        <main className="w-full max-w-md">
+          <div className="terminal p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+              <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+              <span className="w-3 h-3 rounded-full bg-green-500/70 inline-block"></span>
+              <div className="ml-auto text-xs text-slate-400">Maintenance mode</div>
             </div>
 
-            <div className="space-y-4">
-              {topVoters.map((voter) => (
-                <div
-                  key={voter.rank}
-                  className="flex items-center justify-between p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
-                        voter.rank === 1
-                          ? "bg-yellow-500 text-black"
-                          : voter.rank === 2
-                            ? "bg-gray-400 text-black"
-                            : voter.rank === 3
-                              ? "bg-amber-600 text-white"
-                              : "bg-slate-600 text-white"
-                      }`}
-                    >
-                      {voter.rank}
-                    </div>
-                    <span className="text-white font-semibold">{voter.name}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Star className="w-4 h-4 text-yellow-400" />
-                    <span className="text-yellow-400 font-bold">{voter.votes}</span>
-                  </div>
+            <div className="text-[13px] leading-6">
+              <div className="term-line">
+                <span className="text-slate-400">[</span>
+                <span className="text-slate-200">init</span>
+                <span className="text-slate-400">]</span> Boot sequence started
+              </div>
+              <div className="term-line">
+                <span className="text-slate-400">[</span>
+                <span className="text-slate-200">update</span>
+                <span className="text-slate-400">]</span> Deploying assets — optimizing shaders
+              </div>
+              <div className="term-line">
+                <span className="text-slate-400">[</span>
+                <span className="text-slate-200">status</span>
+                <span className="text-slate-400">]</span> Expected return:{" "}
+                <strong className="text-white">~ 3 hours</strong>
+              </div>
+
+              <div className="term-line mt-3">
+                <div className="term-progress">
+                  <div id="bar" className="bar"></div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Vote Rewards */}
-          <div className="glass-effect p-8">
-            <div className="flex items-center space-x-2 mb-6">
-              <Gift className="w-6 h-6 text-green-400" />
-              <h2 className="text-2xl font-bold text-white">Vote Rewards</h2>
-            </div>
-
-            <div className="space-y-4">
-              <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-                <h3 className="text-green-400 font-bold mb-2">Per Vote Rewards</h3>
-                <ul className="text-gray-300 text-sm space-y-1">
-                  <li>• 5 Diamonds</li>
-                  <li>• 100-500 Coins</li>
-                  <li>• Vote Keys</li>
-                  <li>• XP Boost (30 min)</li>
-                </ul>
               </div>
 
-              <div className="p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                <h3 className="text-blue-400 font-bold mb-2">Daily Vote Bonus</h3>
-                <ul className="text-gray-300 text-sm space-y-1">
-                  <li>• Vote on all 6 sites</li>
-                  <li>• Get 2x rewards</li>
-                  <li>• Bonus vote crate</li>
-                  <li>• Special items</li>
-                </ul>
+              <div className="mt-4 text-xs text-slate-400 font-mono">
+                Need help? Visit our{" "}
+                <a
+                  href="https://discord.domain.com"
+                  className="underline text-slate-200 hover:text-white"
+                >
+                  Discord
+                </a>{" "}
+                or{" "}
+                <a
+                  href="https://dash.domain.com"
+                  className="underline text-slate-200 hover:text-white"
+                >
+                  Dashboard
+                </a>
               </div>
 
-              <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
-                <h3 className="text-purple-400 font-bold mb-2">Monthly Top Voter</h3>
-                <ul className="text-gray-300 text-sm space-y-1">
-                  <li>• Exclusive rank upgrade</li>
-                  <li>• 10,000 coins</li>
-                  <li>• Rare cosmetics</li>
-                  <li>• Hall of Fame entry</li>
-                </ul>
+              <div>
+                <span className="text-green-300">root@project</span>:
+                <span className="text-slate-400">~</span>$ <span id="typed">checking integrity...</span>
+                <span className="cursor" aria-hidden="true"></span>
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
+
+      {/* Embedded Styles */}
+      <style jsx>{`
+        :root {
+          --bg-900: #05060a;
+          --bg-800: #0b0d13;
+          --accent-1: rgba(126, 58, 255, 0.12);
+          --accent-2: rgba(0, 255, 200, 0.06);
+        }
+
+        .lux-bg {
+          background: linear-gradient(
+              180deg,
+              rgba(6, 8, 12, 1) 0%,
+              rgba(12, 10, 18, 1) 100%
+            ),
+            radial-gradient(600px 400px at 10% 10%, rgba(126, 58, 255, 0.08), transparent 20%),
+            radial-gradient(500px 300px at 90% 90%, rgba(0, 255, 200, 0.04), transparent 25%);
+          background-blend-mode: screen, overlay;
+        }
+
+        .terminal {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "JetBrains Mono", monospace;
+          color: #b9f6ca;
+          background: rgba(2, 6, 12, 0.45);
+          border: 1px solid rgba(255, 255, 255, 0.04);
+          box-shadow: 0 6px 30px rgba(2, 6, 12, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+          backdrop-filter: blur(6px) saturate(120%);
+        }
+
+        .term-line {
+          opacity: 0;
+          transform: translateY(6px);
+          animation: lineIn 1s ease forwards;
+        }
+
+        .term-line:nth-child(1) {
+          animation-delay: 0.3s;
+        }
+
+        .term-line:nth-child(2) {
+          animation-delay: 0.7s;
+        }
+
+        .term-line:nth-child(3) {
+          animation-delay: 1.1s;
+        }
+
+        .term-line:nth-child(4) {
+          animation-delay: 1.5s;
+        }
+
+        @keyframes lineIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .term-progress {
+          height: 10px;
+          width: 100%;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+          border-radius: 6px;
+          overflow: hidden;
+          margin-top: 12px;
+          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .term-progress .bar {
+          height: 100%;
+          width: 0%;
+          background: linear-gradient(90deg, rgba(0, 255, 200, 0.18), rgba(126, 58, 255, 0.18));
+          box-shadow: 0 6px 18px rgba(126, 58, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+          border-radius: 6px;
+          transition: width 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+        }
+
+        .cursor {
+          display: inline-block;
+          width: 8px;
+          height: 18px;
+          background: #b9f6ca;
+          margin-left: 6px;
+          border-radius: 2px;
+          animation: blink 1s steps(2, end) infinite;
+          vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 0;
+          }
+        }
+
+        .glass-accent {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+          border: 1px solid rgba(255, 255, 255, 0.02);
+          backdrop-filter: blur(6px);
+        }
+      `}</style>
     </div>
-  )
+  );
 }
