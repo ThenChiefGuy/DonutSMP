@@ -8,11 +8,11 @@ import { NewsModal } from "./news-modal"
 const newsData = [
   {
     id: 1,
-    title: "Halloween Event 2024 - Spooky Adventures Await!",
+    title: "Halloween Event 2025 - Spooky Adventures Await!",
     excerpt:
       "Join us for our biggest Halloween event yet with exclusive rewards, haunted dungeons, and limited-time items.",
     content:
-      "Get ready for the most spine-chilling event of the year! Our Halloween Event 2024 brings you haunted dungeons filled with terrifying monsters, exclusive Halloween-themed items, and special rewards that you can only get during this limited time. Explore the Haunted Mansion, defeat the Pumpkin King, and collect rare Halloween cosmetics. The event runs from October 1st to November 1st, so don't miss out on this spooky adventure!",
+      "Get ready for the most spine-chilling event of the year! Our Halloween Event 2025 brings you haunted dungeons filled with terrifying monsters, exclusive Halloween-themed items, and special rewards that you can only get during this limited time. Explore the Haunted Mansion, defeat the Pumpkin King, and collect rare Halloween cosmetics. The event runs from October 1st to November 1st, so don't miss out on this spooky adventure!",
     author: "Admin Steve",
     date: "2024-10-15",
     image:
@@ -20,7 +20,7 @@ const newsData = [
   },
   {
     id: 2,
-    title: "New PvP Arena Now Open - Battle for Glory!",
+    title: "New Crystal PvP Arena!",
     excerpt:
       "Test your combat skills in our brand new PvP arena with ranked matches and exclusive rewards for champions.",
     content:
@@ -44,7 +44,7 @@ const newsData = [
   {
     id: 4,
     title: "Custom Enchantments Released - Power Up Your Gear!",
-    excerpt: "Discover over 30 new custom enchantments that will revolutionize your gameplay experience.",
+    excerpt: "Discover over 70 new custom enchantments that will revolutionize your gameplay experience.",
     content:
       "Prepare to enhance your equipment like never before! We've introduced over 30 custom enchantments that add unique abilities to your weapons, armor, and tools. From explosive arrows to self-repairing armor, these enchantments will change how you play. Some highlights include: Lightning Strike (chance to summon lightning), Vampire (heal from damage dealt), and Telekinesis (automatically pick up mined blocks). Visit the Enchantment Master in spawn to learn more!",
     author: "Admin Sarah",
@@ -54,8 +54,8 @@ const newsData = [
   },
   {
     id: 5,
-    title: "Monthly Building Contest - Theme: Medieval Castles",
-    excerpt: "Show off your building skills in our monthly contest with amazing prizes for the most creative builds.",
+    title: "Mega Project by one of our Players",
+    excerpt: "A player of our comunity build a huge Medival Castle as a part of a Competition.",
     content:
       "Calling all master builders! This month's building contest theme is Medieval Castles. Create the most impressive, creative, and detailed medieval castle to win amazing prizes including exclusive building materials, custom titles, and in-game currency. The contest runs until the end of the month, and all builds will be judged by our staff team and community votes. Don't forget to use the contest world accessible via /contest. Good luck, builders!",
     author: "Builder Jenny",
