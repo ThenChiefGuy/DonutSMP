@@ -3,13 +3,13 @@ import { Sword, Home, Coins, Zap, Users, Shield } from "lucide-react"
 const features = [
   {
     icon: Sword,
-    title: "Custom PvP",
+    title: "Crystal PvP",
     description: "Engage in epic battles with custom weapons and abilities in our dedicated PvP zones.",
   },
   {
     icon: Home,
-    title: "Land Claims",
-    description: "Protect your builds with our advanced land claiming system and grief protection.",
+    title: "No Claims",
+    description: "There are no claims, Grief other players and hide youd base.",
   },
   {
     icon: Coins,
@@ -24,7 +24,7 @@ const features = [
   {
     icon: Users,
     title: "Active Community",
-    description: "Join thousands of active players in our friendly and welcoming community.",
+    description: "Join hundreds of active players in our friendly and welcoming community.",
   },
   {
     icon: Shield,
@@ -42,7 +42,7 @@ export function FeaturesSection() {
             Server <span className="text-blue-400">Features</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Discover what makes CraftRealm the ultimate Minecraft experience
+            Discover what makes DonutSMP the ultimate Minecraft experience
           </p>
         </div>
 
