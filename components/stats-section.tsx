@@ -9,7 +9,7 @@ export function StatsSection() {
   const stats = [
     {
       icon: Users,
-      value: loading ? "..." : status?.players?.online ? `${status.players.online.toLocaleString()}` : "1000+",
+      value: loading ? "..." : status?.players?.online ? `${status.players.online.toLocaleString()}` : "0+",
       label: "Players Online",
       color: "text-blue-400",
       pulseClass: "pulse-glow-subtle",
