@@ -45,7 +45,7 @@ export function Navigation() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-white neon-text-green group-hover:text-green-300 transition-colors">
-                  CraftRealm
+                  DonutSMP
                 </span>
                 <span className="text-xs text-gray-400 hidden sm:block">Ultimate Survival</span>
               </div>
