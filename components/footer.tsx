@@ -33,7 +33,7 @@ export function Footer() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-2xl font-bold text-white neon-text-green">CraftRealm</span>
+              <span className="text-2xl font-bold text-white neon-text-green">DonutSMP</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               The ultimate Minecraft survival experience with custom plugins, events, and an amazing community. Join
@@ -41,9 +41,9 @@ export function Footer() {
             </p>
             <div
               className="glass-effect px-4 py-2 rounded-lg inline-block cursor-pointer hover:bg-white/20 transition-colors"
-              onClick={() => copyToClipboard("play.craftrealm.net")}
+              onClick={() => copyToClipboard("ggdonutsmp.falixsrv.me")}
             >
-              <span className="text-green-400 font-mono">{copied ? "IP Copied!" : "play.craftrealm.net"}</span>
+              <span className="text-green-400 font-mono">{copied ? "IP Copied!" : "ggdonutsmp.falixsrv.me"}</span>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ export function Footer() {
             <h3 className="text-white font-bold mb-4">Community</h3>
             <div className="space-y-3">
               <a
-                href="https://discord.gg/craftrealm"
+                href="https://discord.gg/AhMCzfDJ7a"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-400 hover:text-[#5865F2] transition-colors group"
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">© 2024 CraftRealm. All rights reserved. Not affiliated with Mojang Studios.</p>
+          <p className="text-gray-400">© 2025 CraftRealm. All rights reserved. Not affiliated with Mojang Studios or DonutSMP. </p>
         </div>
       </div>
     </footer>
