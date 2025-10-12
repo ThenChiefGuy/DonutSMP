@@ -11,7 +11,7 @@ const staffMembers = [
     description:
       "Founder and lead developer of DonutSMP. Passionate about creating the best Minecraft experience.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=0f1a8a15cae53ad5&model=classic&theta=30&phi=21&time=882.14", // your skin
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Crown,
     color: "text-yellow-400",
     neonClass: "neon-text-yellow",
@@ -24,7 +24,7 @@ const staffMembers = [
     description:
       "Helps manage the server, coordinates staff teams, and ensures everything runs smoothly.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14", // shared skin
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Crown,
     color: "text-yellow-300",
     neonClass: "neon-text-yellow",
@@ -36,7 +36,7 @@ const staffMembers = [
     role: "Manager",
     description: "Oversees daily operations and ensures smooth server management.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Shield,
     color: "text-red-400",
     neonClass: "neon-text-red",
@@ -48,7 +48,7 @@ const staffMembers = [
     role: "Developer",
     description: "Creates custom plugins and maintains server infrastructure.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Wrench,
     color: "text-blue-400",
     neonClass: "neon-text-blue",
@@ -58,7 +58,7 @@ const staffMembers = [
     role: "Developer",
     description: "Develops unique gameplay features and technical systems for the server.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Wrench,
     color: "text-blue-400",
     neonClass: "neon-text-blue",
@@ -68,7 +68,7 @@ const staffMembers = [
     role: "Developer",
     description: "Contributes backend tools and optimizes server performance.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Wrench,
     color: "text-blue-400",
     neonClass: "neon-text-blue",
@@ -78,7 +78,7 @@ const staffMembers = [
     role: "Developer",
     description: "Handles plugin updates and new feature integration.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Wrench,
     color: "text-blue-400",
     neonClass: "neon-text-blue",
@@ -90,7 +90,7 @@ const staffMembers = [
     role: "SR Admin",
     description: "Oversees all staff operations and ensures server-wide harmony.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Shield,
     color: "text-green-400",
     neonClass: "neon-text-green",
@@ -102,7 +102,7 @@ const staffMembers = [
     role: "Admin",
     description: "Assists with community management and server moderation.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-purple-400",
     neonClass: "neon-text-purple",
@@ -112,7 +112,7 @@ const staffMembers = [
     role: "Admin",
     description: "Keeps the community active and helps players daily.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-purple-400",
     neonClass: "neon-text-purple",
@@ -122,7 +122,7 @@ const staffMembers = [
     role: "Admin",
     description: "Monitors gameplay and supports both players and staff.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-purple-400",
     neonClass: "neon-text-purple",
@@ -134,7 +134,7 @@ const staffMembers = [
     role: "Helper",
     description: "Assists new players and maintains a friendly community atmosphere.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-cyan-400",
     neonClass: "neon-text-blue",
@@ -144,7 +144,7 @@ const staffMembers = [
     role: "Helper",
     description: "Supports players and helps with in-game questions.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-cyan-400",
     neonClass: "neon-text-blue",
@@ -154,7 +154,7 @@ const staffMembers = [
     role: "Helper",
     description: "Friendly and helpful — assists players with everything they need.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-cyan-400",
     neonClass: "neon-text-blue",
@@ -164,7 +164,7 @@ const staffMembers = [
     role: "Helper",
     description: "Guides players and ensures everyone enjoys the experience.",
     avatar:
-      "https://s.namemc.com/3d/skin/body.png?id=36b158960bcb3bae&model=classic&theta=30&phi=21&time=882.14",
+      "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
     color: "text-cyan-400",
     neonClass: "neon-text-blue",
