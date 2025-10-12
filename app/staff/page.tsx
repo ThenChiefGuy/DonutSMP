@@ -1,3 +1,4 @@
+"use client"; // <<< add this at the very first line
 import { Crown, Shield, Users, Wrench } from "lucide-react"
 import Image from "next/image"
 
