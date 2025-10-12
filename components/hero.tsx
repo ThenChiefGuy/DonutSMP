@@ -7,7 +7,7 @@ import { useServerStatus } from "../hooks/use-server-status"
 
 export function Hero() {
   const [copied, setCopied] = useState(false)
-  const { status, loading, error } = useServerStatus("hypixel.net")
+  const { status, loading, error } = useServerStatus("ggdonutsmp.falixsrv.me")
 
   const copyToClipboard = async (text: string) => {
     try {
