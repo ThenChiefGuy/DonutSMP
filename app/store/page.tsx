@@ -45,7 +45,7 @@ export default function Home() {
         <header className="max-w-xl">
           <div className="p-6 rounded-2xl terminal glass-accent">
             <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-              Your Project Name
+              DonutSMP
             </h1>
             <p className="mt-3 text-sm text-slate-300/80">
               A new digital experience is being crafted. Stay tuned — we’re
@@ -104,7 +104,7 @@ export default function Home() {
                 <span className="text-slate-400">[</span>
                 <span className="text-slate-200">status</span>
                 <span className="text-slate-400">]</span> Expected return:{" "}
-                <strong className="text-white">~ 3 hours</strong>
+                <strong className="text-white">~ 69 hours</strong>
               </div>
               <div className="term-line mt-3">
                 <div className="term-progress">
@@ -114,14 +114,14 @@ export default function Home() {
               <div className="mt-4 text-xs text-slate-400 font-mono">
                 Need help? Visit our{" "}
                 <a
-                  href="https://discord.domain.com"
+                  href="."
                   className="underline text-slate-200 hover:text-white"
                 >
                   Discord
                 </a>{" "}
                 or{" "}
                 <a
-                  href="https://dash.domain.com"
+                  href="#"
                   className="underline text-slate-200 hover:text-white"
                 >
                   Dashboard
