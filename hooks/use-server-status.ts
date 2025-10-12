@@ -12,12 +12,12 @@ interface ServerStatus {
   motd: string
 }
 
-export function useServerStatus(serverIp = "hypixel.net") {
+export function useServerStatus(serverIp = "ggdonutsmp.falixsrv.me") {
   const [status, setStatus] = useState<ServerStatus>({
     online: true,
     players: { online: 1247, max: 2000 },
-    version: "1.20.4",
-    motd: "CraftRealm - Ultimate Survival",
+    version: "1.21",
+    motd: "DonutSMP - Ultimate Survival",
   })
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
