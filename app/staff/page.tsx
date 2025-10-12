@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const staffMembers = [
   {
-    name: "DiamondKing_99",
+    name: "TheBlackSpider54",
     role: "Owner",
     description: "Founder and lead developer of CraftRealm. Passionate about creating the best Minecraft experience.",
     avatar:
@@ -13,8 +13,8 @@ const staffMembers = [
     neonClass: "neon-text-yellow",
   },
   {
-    name: "RedstoneWizard",
-    role: "Manager",
+    name: "Sisil_Vai",
+    role: "Manager" ,
     description: "Oversees daily operations and ensures smooth server management.",
     avatar:
       "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
@@ -23,7 +23,7 @@ const staffMembers = [
     neonClass: "neon-text-red",
   },
   {
-    name: "CodeCrafter_MC",
+    name: "Gerhart",
     role: "Developer",
     description: "Creates custom plugins and maintains server infrastructure.",
     avatar:
@@ -33,7 +33,7 @@ const staffMembers = [
     neonClass: "neon-text-blue",
   },
   {
-    name: "EnderGuardian",
+    name: "SleepyAnk",
     role: "Moderator",
     description: "Keeps the community safe and helps players with their questions.",
     avatar:
@@ -43,9 +43,9 @@ const staffMembers = [
     neonClass: "neon-text-green",
   },
   {
-    name: "BlockMaster_Pro",
-    role: "Builder",
-    description: "Creates amazing structures and manages building contests.",
+    name: "Tiebe",
+    role: "Admin",
+    description: "Keepy the Community active and helps the players",
     avatar:
       "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
     icon: Users,
@@ -53,7 +53,7 @@ const staffMembers = [
     neonClass: "neon-text-purple",
   },
   {
-    name: "CraftHelper_24",
+    name: "ZoeChan",
     role: "Helper",
     description: "Assists new players and provides support to the community.",
     avatar:
@@ -73,7 +73,7 @@ export default function StaffPage() {
             Our <span className="text-blue-400">Staff Team</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Meet the dedicated team behind CraftRealm who work tirelessly to provide you with the best gaming
+            Meet the dedicated team behind DonutSMP who work tirelessly to provide you with the best gaming
             experience.
           </p>
         </div>
@@ -113,14 +113,20 @@ export default function StaffPage() {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="glass-effect p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-white mb-4">Want to Join Our Team?</h2>
-            <p className="text-gray-300 mb-6">
-              We're always looking for dedicated players to help make CraftRealm even better. Check out our application
-              process and requirements.
-            </p>
-            <button className="minecraft-btn neon-glow-green">Apply Now</button>
-          </div>
+  <div className="glass-effect p-8 max-w-2xl mx-auto">
+    <h2 className="text-2xl font-bold text-white mb-4">Want to Join Our Team?</h2>
+    <p className="text-gray-300 mb-6">
+      We're always looking for dedicated players to help make DonutSMP even better. Check out our application
+      process and requirements.
+    </p>
+    <button
+      className="minecraft-btn neon-glow-green"
+      onClick={() => window.location.href = "https://donutsmp-application.netlify.app/"}
+    >
+      Apply Now
+    </button>
+  </div>
+</div>
         </div>
       </div>
     </div>
