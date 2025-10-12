@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">© 2025 CraftRealm. All rights reserved. Not affiliated with Mojang Studios or DonutSMP. </p>
+          <p className="text-gray-400">© 2025 Cracked DonutSMP. All rights reserved. Not affiliated with Mojang Studios or DonutSMP. </p>
         </div>
       </div>
     </footer>
