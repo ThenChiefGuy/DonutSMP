@@ -1,73 +1,185 @@
-"use client"; // <<< add this at the very first line
-import { Crown, Shield, Users, Wrench } from "lucide-react"
-import Image from "next/image"
+"use client"; // <<< must be first line
+
+import { Crown, Shield, Users, Wrench } from "lucide-react";
+import Image from "next/image";
 
 const staffMembers = [
+  // === Owner ===
   {
     name: "TheBlackSpider54",
     role: "Owner",
-    description: "Founder and lead developer of CraftRealm. Passionate about creating the best Minecraft experience.",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
+    description:
+      "Founder and lead developer of DonutSMP. Passionate about creating the best Minecraft experience.",
+    // Using GorxMC skin
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=8d6469d65788fd06&model=classic&theta=30&phi=21&time=882.14",
     icon: Crown,
     color: "text-yellow-400",
     neonClass: "neon-text-yellow",
   },
+
+  {
+    name: "ru_",
+    role: "Co Owner",
+    description:
+      "Helps manage the server, coordinates staff teams, and ensures everything runs smoothly.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=8b7a06d7e1a2d239&model=classic&theta=30&phi=21&time=882.14", // random skin
+    icon: Crown,
+    color: "text-yellow-300",
+    neonClass: "neon-text-yellow",
+  },
+
   {
     name: "Sisil_Vai",
     role: "Manager",
     description: "Oversees daily operations and ensures smooth server management.",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=1c4a845b8eeb248b&model=classic&theta=30&phi=21&time=882.14", // random skin
     icon: Shield,
     color: "text-red-400",
     neonClass: "neon-text-red",
   },
+
+  // === Developers ===
   {
     name: "Gerhart",
     role: "Developer",
     description: "Creates custom plugins and maintains server infrastructure.",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=9a78b92077d5c52a&model=classic&theta=30&phi=21&time=882.14", // random
     icon: Wrench,
     color: "text-blue-400",
     neonClass: "neon-text-blue",
   },
   {
+    name: "&:x:&",
+    role: "Developer",
+    description: "Develops unique gameplay features and technical systems for the server.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=ff2f729aa52a58cd&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Wrench,
+    color: "text-blue-400",
+    neonClass: "neon-text-blue",
+  },
+  {
+    name: "z1xu",
+    role: "Developer",
+    description: "Contributes backend tools and optimizes server performance.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=af8eeb8bfa8a95f7&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Wrench,
+    color: "text-blue-400",
+    neonClass: "neon-text-blue",
+  },
+  {
+    name: "SJ",
+    role: "Developer",
+    description: "Handles plugin updates and new feature integration.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=cf6f02b40e82e7b7&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Wrench,
+    color: "text-blue-400",
+    neonClass: "neon-text-blue",
+  },
+
+  // === SR Admin ===
+  {
     name: "SleepyAnk",
-    role: "Moderator",
-    description: "Keeps the community safe and helps players with their questions.",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
-    icon: Users,
+    role: "SR Admin",
+    description: "Oversees all staff operations and ensures server-wide harmony.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=4e1c8a17e6a93a7c&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Shield,
     color: "text-green-400",
     neonClass: "neon-text-green",
   },
+
+  // === Admins ===
   {
-    name: "Tiebe",
+    name: "Vuk021",
     role: "Admin",
-    description: "Keeps the Community active and helps the players",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
+    description: "Assists with community management and server moderation.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=2f82ccf21e7cf304&model=classic&theta=30&phi=21&time=882.14", // real skin
     icon: Users,
     color: "text-purple-400",
     neonClass: "neon-text-purple",
   },
   {
-    name: "ZoeChan",
+    name: "Tiebe",
+    role: "Admin",
+    description: "Keeps the community active and helps players daily.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=d983c5b0a7e46d63&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Users,
+    color: "text-purple-400",
+    neonClass: "neon-text-purple",
+  },
+  {
+    name: "Basti00098",
+    role: "Admin",
+    description: "Monitors gameplay and supports both players and staff.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=ec27d2b8c4ad0b6f&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Users,
+    color: "text-purple-400",
+    neonClass: "neon-text-purple",
+  },
+
+  // === Helpers ===
+  {
+    name: "alharth23r",
     role: "Helper",
-    description: "Assists new players and provides support to the community.",
-    avatar: "https://s.namemc.com/3d/skin/body.png?id=25aa2bc20e73a2d3&model=classic&theta=30&phi=21&time=882.14&width=600&height=800",
+    description: "Assists new players and maintains a friendly community atmosphere.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=b326b5062b2f0e69&model=classic&theta=30&phi=21&time=882.14", // random
     icon: Users,
     color: "text-cyan-400",
     neonClass: "neon-text-blue",
   },
-]
+  {
+    name: "iamdue",
+    role: "Helper",
+    description: "Supports players and helps with in-game questions.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=aab3238922bcc25a&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Users,
+    color: "text-cyan-400",
+    neonClass: "neon-text-blue",
+  },
+  {
+    name: "ZoeChan",
+    role: "Helper",
+    description: "Friendly and helpful — assists players with everything they need.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=9bf31c7ff062936a&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Users,
+    color: "text-cyan-400",
+    neonClass: "neon-text-blue",
+  },
+  {
+    name: "Sooch4",
+    role: "Helper",
+    description: "Guides players and ensures everyone enjoys the experience.",
+    avatar:
+      "https://s.namemc.com/3d/skin/body.png?id=c16a5320fa475530&model=classic&theta=30&phi=21&time=882.14", // random
+    icon: Users,
+    color: "text-cyan-400",
+    neonClass: "neon-text-blue",
+  },
+];
 
 export default function StaffPage() {
   const hoverTextClasses = {
     "text-yellow-400": "group-hover:text-yellow-400 group-hover:neon-text-yellow",
+    "text-yellow-300": "group-hover:text-yellow-300 group-hover:neon-text-yellow",
     "text-red-400": "group-hover:text-red-400 group-hover:neon-text-red",
     "text-blue-400": "group-hover:text-blue-400 group-hover:neon-text-blue",
     "text-green-400": "group-hover:text-green-400 group-hover:neon-text-green",
     "text-purple-400": "group-hover:text-purple-400 group-hover:neon-text-purple",
     "text-cyan-400": "group-hover:text-cyan-400 group-hover:neon-text-blue",
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-20">
@@ -78,8 +190,8 @@ export default function StaffPage() {
             Our <span className="text-blue-400">Staff Team</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Meet the dedicated team behind DonutSMP who work tirelessly to provide you with the best gaming
-            experience.
+            Meet the dedicated team behind <span className="text-blue-400 font-semibold">DonutSMP</span> — the people
+            who work tirelessly to keep the server fun, friendly, and running smoothly.
           </p>
         </div>
 
@@ -101,10 +213,9 @@ export default function StaffPage() {
                   />
                 </div>
                 <div
-                  className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center ${member.color.replace(
-                    "text-",
-                    "bg-"
-                  ).replace("-400", "-500/20")} border-2 ${member.color.replace("text-", "border-")}`}
+                  className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center ${member.color
+                    .replace("text-", "bg-")
+                    .replace("-400", "-500/20")} border-2 ${member.color.replace("text-", "border-")}`}
                 >
                   <member.icon className={`w-6 h-6 ${member.color}`} />
                 </div>
@@ -124,12 +235,11 @@ export default function StaffPage() {
           <div className="glass-effect p-8 max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-white mb-4">Want to Join Our Team?</h2>
             <p className="text-gray-300 mb-6">
-              We're always looking for dedicated players to help make DonutSMP even better. Check out our application
-              process and requirements.
+              We're always looking for dedicated players to help make <span className="text-blue-400 font-semibold">DonutSMP</span> even better. Check out our application process and requirements.
             </p>
             <button
               className="minecraft-btn neon-glow-green"
-              onClick={() => window.location.href = "https://donutsmp-application.netlify.app/"}
+              onClick={() => (window.location.href = "https://donutsmp-application.netlify.app/")}
             >
               Apply Now
             </button>
@@ -137,5 +247,5 @@ export default function StaffPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
