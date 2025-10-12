@@ -1,100 +1,330 @@
-"use client"
+<!doctype html>
 
-import { useEffect, useState } from "react"
-import { ExternalLink } from "lucide-react"
-import Image from "next/image"
+<html lang="ro">
 
-export default function StorePage() {
-  const [copied, setCopied] = useState(false)
+<head>
 
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error("Failed to copy: ", err)
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>DonutSMP Store — Coming Soon</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <style>
+
+    :root{
+
+      --bg-900: #05060a;
+
+      --bg-800: #0b0d13;
+
+      --accent-1: rgba(126, 58, 255, 0.12);
+
+      --accent-2: rgba(0, 255, 200, 0.06);
+
     }
-  }
 
-  useEffect(() => {
-    // Redirect to external store after 3 seconds
-    const timer = setTimeout(() => {
-      window.open("https://store.craftrealm.net", "_blank")
-    }, 3000)
 
-    return () => clearTimeout(timer)
-  }, [])
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-green-500/20 rounded-full mb-8 neon-glow-green p-4">
-            <div className="w-16 h-16 rounded-lg overflow-hidden">
-              <Image
-                src="https://sjc.microlink.io/Urp0tNZenE8Ucn9pxVrQWrW5X33QYgvG_DdUbukIjI12XUEK7EXrr0tu5eeNDQNqqzGOYUIAn9YtZnkscMg2bQ.jpeg"
-                alt="CraftRealm Creeper Logo"
-                width={64}
-                height={64}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+    .lux-bg {
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 neon-text-green">
-            CraftRealm <span className="text-green-400">Store</span>
-          </h1>
+      background: linear-gradient(180deg, rgba(6,8,12,1) 0%, rgba(12,10,18,1) 100%), radial-gradient(600px 400px at 10% 10%, rgba(126,58,255,0.08), transparent 20%), radial-gradient(500px 300px at 90% 90%, rgba(0,255,200,0.04), transparent 25%);
 
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Support the server and get exclusive perks, ranks, and items to enhance your gameplay experience.
-          </p>
+      background-blend-mode: screen, overlay;
 
-          <div className="glass-effect p-8 mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Redirecting to Store...</h2>
-            <p className="text-gray-300 mb-6">
-              You will be automatically redirected to our secure store in a few seconds.
-            </p>
-            <div className="w-full bg-slate-700 rounded-full h-2 mb-6">
-              <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{ width: "100%" }}></div>
-            </div>
-          </div>
+    }
 
-          <a
-            href="https://store.craftrealm.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="minecraft-btn inline-flex items-center space-x-2 neon-glow-green"
-          >
-            <span>Visit Store Now</span>
-            <ExternalLink className="w-5 h-5" />
-          </a>
 
-          <div className="mt-8">
-            <button
-              onClick={() => copyToClipboard("play.craftrealm.net")}
-              className="minecraft-btn inline-flex items-center space-x-2 neon-glow-green mr-4"
-            >
-              <span>{copied ? "IP Copied!" : "Copy Server IP"}</span>
-            </button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            <div className="glass-effect p-6 text-center">
-              <h3 className="text-xl font-bold text-green-400 mb-2">VIP Ranks</h3>
-              <p className="text-gray-300">Exclusive perks and privileges</p>
-            </div>
-            <div className="glass-effect p-6 text-center">
-              <h3 className="text-xl font-bold text-blue-400 mb-2">Cosmetics</h3>
-              <p className="text-gray-300">Unique items and decorations</p>
-            </div>
-            <div className="glass-effect p-6 text-center">
-              <h3 className="text-xl font-bold text-purple-400 mb-2">Boosters</h3>
-              <p className="text-gray-300">XP and drop rate multipliers</p>
-            </div>
-          </div>
+    .terminal {
+
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "JetBrains Mono", monospace;
+
+      color: #b9f6ca;
+
+      background: rgba(2,6,12,0.45);
+
+      border: 1px solid rgba(255,255,255,0.04);
+
+      box-shadow: 0 6px 30px rgba(2,6,12,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+
+      backdrop-filter: blur(6px) saturate(120%);
+
+    }
+
+
+
+    .term-line {
+
+      opacity: 0;
+
+      transform: translateY(6px);
+
+      animation: lineIn 1s ease forwards;
+
+    }
+
+    .term-line:nth-child(1){ animation-delay: 0.3s }
+
+    .term-line:nth-child(2){ animation-delay: 0.7s }
+
+    .term-line:nth-child(3){ animation-delay: 1.1s }
+
+    .term-line:nth-child(4){ animation-delay: 1.5s }
+
+
+
+    @keyframes lineIn {
+
+      to { opacity: 1; transform: translateY(0) }
+
+    }
+
+
+
+    .term-progress {
+
+      height: 10px;
+
+      width: 100%;
+
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+
+      border-radius: 6px;
+
+      overflow: hidden;
+
+      margin-top: 12px;
+
+      position: relative;
+
+      border: 1px solid rgba(255,255,255,0.03);
+
+    }
+
+    .term-progress .bar {
+
+      height: 100%;
+
+      width: 0%;
+
+      background: linear-gradient(90deg, rgba(0,255,200,0.18), rgba(126,58,255,0.18));
+
+      box-shadow: 0 6px 18px rgba(126,58,255,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
+
+      border-radius: 6px;
+
+      transition: width 0.6s cubic-bezier(.2,.9,.2,1);
+
+    }
+
+
+
+    .cursor {
+
+      display:inline-block;
+
+      width:8px;
+
+      height:18px;
+
+      background: #b9f6ca;
+
+      margin-left:6px;
+
+      border-radius: 2px;
+
+      animation: blink 1s steps(2,end) infinite;
+
+      vertical-align: text-bottom;
+
+    }
+
+    @keyframes blink { 50% { opacity: 0 } }
+
+
+
+    @media (prefers-reduced-motion: reduce){
+
+      .term-line, .term-progress .bar, .cursor { animation: none !important; transition:none !important; }
+
+    }
+
+
+
+    .glass-accent {
+
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+
+      border: 1px solid rgba(255,255,255,0.02);
+
+      backdrop-filter: blur(6px);
+
+    }
+
+  </style>
+
+</head>
+
+<body class="lux-bg min-h-screen text-slate-300 antialiased">
+
+
+
+  <div class="min-h-screen flex flex-col lg:flex-row items-center justify-center p-6 lg:p-12 gap-10">
+
+
+
+    <header class="max-w-xl">
+
+      <div class="p-6 rounded-2xl terminal glass-accent">
+
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">Your Project Name</h1>
+
+        <p class="mt-3 text-sm text-slate-300/80">A new digital experience is being crafted. Stay tuned — we’re building something truly special.</p>
+
+        <div class="mt-6 grid grid-cols-2 gap-3">
+
+          <a href="https://ggdonutsmp.netlify.app" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-red-600/80 to-darkgreen-500/80 shadow-md hover:scale-[1.01] transition">Dashboard</a>
+
+          <a href="https://discord.gg/HyTFhjMwCz" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-cyan-600/80 to-darkgreen-500/80 shadow-md hover:scale-[1.01] transition">Discord </a>
+
         </div>
+
+        <p class="mt-5 text-xs text-slate-400"> Crafted by <a href="https://github.com/septydev" target="_blank" style="color: white">TheBlackSpider</a>
+
       </div>
-    </div>
-  )
-}
+
+    </header>
+
+
+
+    <main class="w-full max-w-md">
+
+      <div class="terminal p-6 rounded-2xl">
+
+        <div class="flex items-center gap-3 mb-4">
+
+          <span class="w-3 h-3 rounded-full bg-red-500/90 inline-block"></span>
+
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+
+          <span class="w-3 h-3 rounded-full bg-green-500/70 inline-block"></span>
+
+          <div class="ml-auto text-xs text-slate-400">Maintenance mode</div>
+
+        </div>
+
+        
+
+        <div class="text-[13px] leading-6">
+
+          <div class="term-line"><span class="text-slate-400">[</span><span class="text-slate-200">init</span><span class="text-slate-400">]</span> Boot sequence started</div>
+
+          <div class="term-line"><span class="text-slate-400">[</span><span class="text-slate-200">update</span><span class="text-slate-400">]</span> Deploying assets — optimizing shaders</div>
+
+          <div class="term-line"><span class="text-slate-400">[</span><span class="text-slate-200">status</span><span class="text-slate-400">]</span> Expected return: <strong class="text-white">~ 3 hours</strong></div>
+
+          <div class="term-line mt-3">
+
+            <div class="term-progress">
+
+            </div>
+
+          </div>
+
+          <div class="mt-4 text-xs text-slate-400 font-mono">
+
+           Need help? Visit our 
+
+          <a href="https://discord.domain.com" class="underline text-slate-200 hover:text-white">Discord</a> 
+
+          or 
+
+         <a href="https://dash.domain.com" class="underline text-slate-200 hover:text-white">Dashboard</a>
+
+         </div>
+
+            <span class="text-green-300">root@project</span>:<span class="text-slate-400">~</span>$ <span id="typed">checking integrity...</span><span class="cursor" aria-hidden="true"></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+
+  <script>
+
+    (function(){
+
+      const bar = document.getElementById('bar');
+
+      let pct = 0;
+
+      const steps = [8, 16, 5, 20, 10, 9, 12, 20];
+
+      let i = 0;
+
+
+
+      function advance(){
+
+        if(i >= steps.length) {
+
+          pct = 100;
+
+          bar.style.width = pct + '%';
+
+          return;
+
+        }
+
+        pct = Math.min(99, pct + steps[i]);
+
+        bar.style.width = pct + '%';
+
+        i++;
+
+        setTimeout(advance, 500 + Math.random()*900);
+
+      }
+
+      setTimeout(advance, 700);
+
+
+
+      const typed = document.getElementById('typed');
+
+      const messages = ['checking packets...', 'patching core modules...', 'optimizing assets...', 'finalizing...'];
+
+      let tIndex = 0;
+
+      function cycleTyped(){
+
+        typed.textContent = messages[tIndex];
+
+        tIndex = (tIndex + 1) % messages.length;
+
+        setTimeout(cycleTyped, 2500 + Math.random()*1200);
+
+      }
+
+      cycleTyped();
+
+    })();
+
+  </script>
+
+</body>
+
+</html>
+
