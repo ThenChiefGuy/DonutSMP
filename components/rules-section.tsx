@@ -3,8 +3,8 @@ import { Shield, Users, Zap, Heart } from "lucide-react"
 const rules = [
   {
     icon: Shield,
-    title: "No Griefing",
-    description: "Respect other players' builds and creations. Griefing will result in immediate punishment.",
+    title: "No Hacking",
+    description: "Player/Block ESP are strictly prohibited and it will result into a ban .",
   },
   {
     icon: Users,
