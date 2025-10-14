@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Calendar, User } from "lucide-react"
 import Image from "next/image"
 import { NewsModal } from "./news-modal"
 
+// Initial news data
 const initialNews = [
   {
     id: 1,
@@ -13,9 +14,10 @@ const initialNews = [
     content: "Full content goes here...",
     author: "Admin Steve",
     date: "2024-10-15",
-    image: "https://www.minecraft.net/content/dam/minecraftnet/games/dungeons/key-art/Minecraft%20Dungeons%20Halloween_Hero%20Screenshot.jpg",
+    image:
+      "https://www.minecraft.net/content/dam/minecraftnet/games/dungeons/key-art/Minecraft%20Dungeons%20Halloween_Hero%20Screenshot.jpg",
   },
-  // Add other news items here...
+  // Add more news items here...
 ]
 
 export function NewsSection() {
@@ -35,11 +37,11 @@ export function NewsSection() {
   const nextPage = () => setCurrentPage((prev) => (prev + 1) % totalPages)
   const prevPage = () => setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages)
 
-  // Secret admin activation by clicking 10 times
-  const handleImageClick = () => {
+  // Admin hidden button click handler
+  const handleAdminClick = () => {
     setClickCount((prev) => {
       const newCount = prev + 1
-      if (newCount >= 10) {
+      if (newCount >= 5) {
         const password = prompt("Enter admin password:")
         if (password === process.env.NEXT_PUBLIC_ADMIN_PASS) {
           setAdminMode(true)
@@ -47,7 +49,7 @@ export function NewsSection() {
         } else {
           alert("Wrong password!")
         }
-        return 0
+        return 0 // reset counter after attempt
       }
       return newCount
     })
@@ -70,7 +72,6 @@ export function NewsSection() {
   const editNews = (id) => {
     const newsItem = newsData.find((n) => n.id === id)
     if (!newsItem) return
-
     const updated = {
       title: prompt("Title:", newsItem.title) || newsItem.title,
       excerpt: prompt("Excerpt:", newsItem.excerpt) || newsItem.excerpt,
@@ -79,7 +80,6 @@ export function NewsSection() {
       date: prompt("Date (YYYY-MM-DD):", newsItem.date) || newsItem.date,
       image: prompt("Image URL:", newsItem.image) || newsItem.image,
     }
-
     setNewsData(newsData.map((n) => (n.id === id ? { ...n, ...updated } : n)))
   }
 
@@ -91,6 +91,7 @@ export function NewsSection() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 neon-text-green">
             Latest <span className="text-green-400">News</span>
@@ -99,6 +100,7 @@ export function NewsSection() {
             Stay updated with the latest events, updates, and announcements
           </p>
 
+          {/* Admin Add News Button */}
           {adminMode && (
             <div className="mt-4 space-x-2">
               <button
@@ -111,6 +113,7 @@ export function NewsSection() {
           )}
         </div>
 
+        {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {getCurrentNews().map((news) => (
             <div
@@ -125,17 +128,13 @@ export function NewsSection() {
                 borderRadius: "0.75rem",
               }}
             >
-              <div
-                className="relative mb-4 overflow-hidden"
-                style={{ borderRadius: "0.5rem" }}
-              >
+              <div className="relative mb-4 overflow-hidden" style={{ borderRadius: "0.5rem" }}>
                 <Image
                   src={news.image || "/placeholder.svg"}
                   alt={news.title}
                   width={500}
                   height={300}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  onClick={handleImageClick} // 10 clicks trigger admin
                 />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
@@ -155,6 +154,7 @@ export function NewsSection() {
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">{news.excerpt}</p>
 
+              {/* Admin Edit/Delete */}
               {adminMode && (
                 <div className="mt-4 space-x-2">
                   <button
@@ -183,26 +183,33 @@ export function NewsSection() {
 
         {/* Pagination */}
         <div className="flex justify-center items-center space-x-4">
-          <button
-            onClick={prevPage}
-            disabled={currentPage === 0}
-            className="pagination-btn"
-          >
+          <button onClick={prevPage} disabled={currentPage === 0} className="pagination-btn">
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
-          <button
-            onClick={nextPage}
-            disabled={currentPage === totalPages - 1}
-            className="pagination-btn"
-          >
+          <button onClick={nextPage} disabled={currentPage === totalPages - 1} className="pagination-btn">
             <ChevronRight className="w-6 h-6 text-white" />
           </button>
         </div>
       </div>
 
-      {selectedNews && (
-        <NewsModal news={selectedNews} onClose={() => setSelectedNews(null)} />
-      )}
+      {/* News Modal */}
+      {selectedNews && <NewsModal news={selectedNews} onClose={() => setSelectedNews(null)} />}
+
+      
+      <button
+        onClick={handleAdminClick}
+        style={{
+          position: "fixed",
+          bottom: "10px",
+          right: "10px",
+          width: "30px",
+          height: "30px",
+          opacity: 0.1,
+          background: "green",
+          borderRadius: "50%",
+          zIndex: 9999,
+        }}
+      />
     </section>
   )
 }
